@@ -1,0 +1,2 @@
+# Adsense_gmail
+Google App Scriptでアドセンスの本日分の収益をgmailに定期送付する
