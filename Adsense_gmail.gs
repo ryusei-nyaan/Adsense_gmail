@@ -1,6 +1,7 @@
 function myFunction() {
 	var SS = SpreadsheetApp.getActiveSpreadsheet();
 	var sheet = SS.getSheets()[0];
+	const adsenseID = PropertiesService.getScriptProperties().getProperty("adsenseID");
 	
 	var endday = new Date();
 	endday.setDate(endday.getDate());
@@ -14,8 +15,8 @@ function myFunction() {
 		dateRange : "TODAY",
 		reportingTimeZone : "ACCOUNT_TIME_ZONE"
 	};
-	//pub-XXXXXXX....はあなたのadsenseID
-	var repo = AdSense.Accounts.Reports.generate("accounts/pub-XXXXXXXXXXXX",args).getRows();
+	//adsenseIDはaccounts/pub-XXXXXXX
+	var repo = AdSense.Accounts.Reports.generate(adsenseID,args).getRows();
 
   
 	var SUBJECT_ = endday + "　本日の成果報告";
